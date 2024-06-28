@@ -1,0 +1,62 @@
+.menu-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .group-container {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 1000px;
+  }
+  
+  .group-name {
+    font-size: 1.5em;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .expand-icon {
+    font-size: 1.2em;
+  }
+  
+  .dish-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .dish-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dish-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .dish-name {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .dish-price {
+    font-size: 1em;
+    color: #888;
+  }
+  

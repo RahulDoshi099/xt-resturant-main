@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
+import "./index.css";
+import "./App.css";
+import { useSelector } from "react-redux";
+import { RootState } from "./state/store";
+import Header from "./components/Header/Header";
+import CartSidebar from "./features/Cart/components/CartSidebar/CartSidebar";
+import Footer from "./components/Footer/Footer";
+import HomePage from "./features/Home/HomePage";
+import ContactPage from "./features/About/Pages/ContactPage";
+import Menu from "./features/Menu/pages/Menu";
+import NoMatch from "./components/NoMatch/NoMatch";
 
-function App() {
+function Layout() {
+  const iscartOpen = useSelector((state: RootState) => state.cart.isCartOpen);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="layout">
+      <Header />
+      <main>
+        {iscartOpen && <CartSidebar />}
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 }
 
-export default App;
+export default function HomeApp() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="menu" element={<Menu />} />
+          <Route path="*" element={<NoMatch />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
+}

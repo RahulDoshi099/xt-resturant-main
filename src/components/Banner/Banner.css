@@ -1,0 +1,14 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-image {
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.banner img {
+  width: 1200px !important;
+  height: 300px !important;
+}
